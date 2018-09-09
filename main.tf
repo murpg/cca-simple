@@ -11,11 +11,11 @@ data "template_file" "cca-docker-compose-file" {
 }
 
 resource "digitalocean_droplet" "application" {
-  name = "application"
+  name = "cca-application"
 
-  image              = "docker-16-04"
-  region             = "nyc3"
-  size               = "s-2vcpu-2gb"
+  image              = "${var.droplet_image}"
+  region             = "${var.droplet_region}"
+  size               = "${var.droplet_size}"
   private_networking = true
   ssh_keys           = ["${var.ssh_key_fingerprint}"]
 
