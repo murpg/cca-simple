@@ -2,6 +2,14 @@ provider "digitalocean" {
   token = "${var.do_token}"
 }
 
+data "template_file" "cca-docker-compose-file" {
+  template = "${file("${path.module}/.deployment/docker-compose.yml.tpl")}"
+
+  vars = {
+    cf2016_license = "${var.cf2016_license}"
+  }
+}
+
 resource "digitalocean_droplet" "application" {
   name = "application"
 
@@ -16,6 +24,7 @@ resource "digitalocean_droplet" "application" {
     inline = [
       "mkdir -p /cca",
       "mkdir -p /cca/app",
+      "echo '${data.template_file.cca-docker-compose-file.rendered}' > /cca/docker-compose.yml",
     ]
 
     connection {
@@ -30,19 +39,6 @@ resource "digitalocean_droplet" "application" {
   provisioner "file" {
     source      = "app/"
     destination = "/cca/app"
-
-    connection {
-      type        = "ssh"
-      private_key = "${file(var.ssh_private_key)}"
-      user        = "root"
-      timeout     = "2m"
-    }
-  }
-
-  # copy docker-compose config file
-  provisioner "file" {
-    source      = ".deployment/docker-compose.yml"
-    destination = "/cca/docker-compose.yml"
 
     connection {
       type        = "ssh"
