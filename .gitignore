@@ -1,4 +1,20 @@
 #################################
+# ColdBox and TestBox files     #
+#################################
+coldbox/
+modules/
+testbox/
+**/apidocs/**
+
+#################################
+# Terraform files               #
+#################################
+.terraform/
+*.tfvars
+*.tfstate
+*.tfstate.backup
+
+#################################
 # IDE generated files           #
 #################################
 .idea/
