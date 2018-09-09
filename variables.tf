@@ -2,7 +2,7 @@ variable "do_token" {}
 variable "ssh_key_fingerprint" {}
 variable "ssh_private_key" {}
 variable "ssh_public_key" {}
-variable "cf2016_license" {}
+variable "cf_license" {}
 
 variable "droplet_image" {
   default     = "docker-16-04"
