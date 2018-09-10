@@ -64,3 +64,7 @@ resource "digitalocean_droplet" "application" {
     }
   }
 }
+
+output "application_ip" {
+  value = "${digitalocean_droplet.application.ipv4_address}"
+}
