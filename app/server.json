@@ -1,7 +1,14 @@
 {
-    "web":{
-        "rewrites":{
-            "enable":"true"
+    "app": {
+        "cfengine": "adobe@2016"
+    },
+    "jvm": {
+        "heapSize": 2048,
+        "args": "-Djava.awt.headless=true"
+    },
+    "web": {
+        "rewrites": {
+            "enable": "true"
         }
     }
 }

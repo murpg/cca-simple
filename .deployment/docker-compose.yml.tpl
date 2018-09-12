@@ -8,5 +8,7 @@ services:
     ports:
       - "80:8080"
     environment:
+      - DEBUG=true
+      - CFENGINE=adobe@2016
       - box_install=true
       - cfconfig_license=${cf_license}
