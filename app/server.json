@@ -1,7 +1,10 @@
 {
-    "web":{
-        "rewrites":{
-            "enable":"true"
+    "web": {
+        "rewrites": {
+            "enable": "true"
         }
+    },
+    "jvm": {
+        "args": "-Djava.awt.headless=true"
     }
 }
