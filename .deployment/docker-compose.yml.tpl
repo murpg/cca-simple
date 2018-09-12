@@ -2,13 +2,12 @@ version: "3"
 services:
 
   app:
-    image: ortussolutions/commandbox:adobe2016
+    image: ortussolutions/commandbox:lucee5
     volumes:
       - ./app/:/app/
     ports:
       - "80:8080"
     environment:
       - DEBUG=true
-      - CFENGINE=adobe@2016
+      - CFENGINE=lucee@5
       - box_install=true
-      - cfconfig_license=${cf_license}
