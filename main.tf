@@ -11,7 +11,7 @@ data "template_file" "cca-docker-compose-file" {
 }
 
 resource "digitalocean_droplet" "application" {
-  name = "cca-application"
+  name = "cca-application_adobe2016"
 
   image              = "${var.droplet_image}"
   region             = "${var.droplet_region}"
@@ -22,7 +22,6 @@ resource "digitalocean_droplet" "application" {
   # prepare folder structure
   provisioner "remote-exec" {
     inline = [
-      "mkdir -p /cca",
       "mkdir -p /cca/app",
       "echo '${data.template_file.cca-docker-compose-file.rendered}' > /cca/docker-compose.yml",
     ]
@@ -53,7 +52,6 @@ resource "digitalocean_droplet" "application" {
     inline = [
       "cd /cca",
       "docker-compose up -d > /dev/null 2>&1",
-      "docker-compose ps",
     ]
 
     connection {
