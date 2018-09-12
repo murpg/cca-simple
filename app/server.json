@@ -1,10 +1,13 @@
 {
+    "startTimeout": 7000,
     "web": {
         "rewrites": {
             "enable": "true"
         }
     },
     "jvm": {
-        "args": "-Djava.awt.headless=true"
+        "args": "-Djava.awt.headless=true",
+        "heapSize": 1024,
+        "minHeapSize": 512
     }
 }

@@ -6,7 +6,7 @@ services:
     volumes:
       - ./app/:/app/
     ports:
-      - "80:8080"
+      - "8080:80"
     environment:
       - DEBUG=true
       - CFENGINE=adobe@2016

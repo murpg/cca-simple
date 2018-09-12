@@ -15,6 +15,6 @@ variable "droplet_region" {
 }
 
 variable "droplet_size" {
-  default     = "s-2vcpu-2gb"
+  default     = "s-2vcpu-4gb"
   description = "The instance size to start"
 }
