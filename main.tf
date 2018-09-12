@@ -11,7 +11,7 @@ data "template_file" "cca-docker-compose-file" {
 }
 
 resource "digitalocean_droplet" "application" {
-  name = "cca-application"
+  name = "cca-application_adobe2016"
 
   image              = "${var.droplet_image}"
   region             = "${var.droplet_region}"
