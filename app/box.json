@@ -22,10 +22,12 @@
     },
     "installPaths":{
         "coldbox":"coldbox",
-        "testbox":"testbox"
+        "testbox":"testbox",
+        "ses-on-request":"modules/ses-on-request"
     },
     "dependencies":{
-        "coldbox":"^4.3.0"
+        "coldbox":"^4.3.0",
+        "ses-on-request":"^1.2.1"
     },
     "scripts":{}
 }
