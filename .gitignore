@@ -1,9 +1,9 @@
 #################################
 # ColdBox and TestBox files     #
 #################################
-coldbox/
-modules/
-testbox/
+app/coldbox/
+app/modules/
+app/testbox/
 **/apidocs/**
 
 #################################
