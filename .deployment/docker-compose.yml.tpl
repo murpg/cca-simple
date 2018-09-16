@@ -5,8 +5,13 @@ services:
     image: ortussolutions/commandbox:adobe2018
     volumes:
       - ./app/:/app/
-    ports:
-      - "80:8080"
     environment:
       - CFENGINE=adobe@2018
       - box_install=true
+
+  proxy:
+    image: nginx:1.12-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"

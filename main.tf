@@ -6,6 +6,10 @@ data "template_file" "cca-docker-compose-file" {
   template = "${file("${path.module}/.deployment/docker-compose.yml.tpl")}"
 }
 
+data "template_file" "cca-nginx-file" {
+  template = "${file("${path.module}/.deployment/nginx.conf.tpl")}"
+}
+
 resource "digitalocean_droplet" "application" {
   name = "cca-application-adobe2018"
 
@@ -20,6 +24,7 @@ resource "digitalocean_droplet" "application" {
     inline = [
       "mkdir -p /cca/app",
       "echo '${data.template_file.cca-docker-compose-file.rendered}' > /cca/docker-compose.yml",
+      "echo '${data.template_file.cca-nginx-file.rendered}' > /cca/nginx.conf",
     ]
 
     connection {
