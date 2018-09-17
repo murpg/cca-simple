@@ -1,22 +1,31 @@
-﻿/**
+﻿<!-----------------------------------------------------------------------
 ********************************************************************************
 Copyright 2005-2007 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
-www.ortussolutions.com
+www.coldbox.org | www.luismajano.com | www.ortussolutions.com
 ********************************************************************************
-*/
-component{
 
-	// APPLICATION CFC PROPERTIES
-	this.name 				= "ColdBoxTestingSuite" & hash(getCurrentTemplatePath());
-	this.sessionManagement 	= true;
-	this.sessionTimeout 	= createTimeSpan( 0, 0, 15, 0 );
-	this.applicationTimeout = createTimeSpan( 0, 0, 15, 0 );
-	this.setClientCookies 	= true;
+Author     :	Luis Majano
+Date        :	10/16/2007
+Description :
+	This is the Application.cfc for usage withing the ColdBox Framework.
+	Make sure that it extends the coldbox object:
+	coldbox.system.Coldbox
 
-	// Create testing mapping
-	this.mappings[ "/tests" ] = getDirectoryFromPath( getCurrentTemplatePath() );
-	// Map back to its root
-	rootPath = REReplaceNoCase( this.mappings[ "/tests" ], "tests(\\|/)", "" );
-	this.mappings["/root"]   = rootPath;
+	So if you have refactored your framework, make sure it extends coldbox.
+----------------------------------------------------------------------->
+<cfcomponent output="false">
 
-}
+	<!--- APPLICATION CFC PROPERTIES --->
+	<cfset this.name = "ColdBoxTestingSuite" & hash(getCurrentTemplatePath())>
+	<cfset this.sessionManagement = true>
+	<cfset this.sessionTimeout = createTimeSpan(0,0,15,0)>
+	<cfset this.applicationTimeout = createTimeSpan(0,0,15,0)>
+	<cfset this.setClientCookies = true>
+
+	<!--- Create testing mapping --->
+	<cfset this.mappings[ "/tests" ] = getDirectoryFromPath( getCurrentTemplatePath() )>
+	<!--- Map back to its root --->
+	<cfset rootPath = REReplaceNoCase( this.mappings[ "/tests" ], "tests(\\|/)", "" )>
+	<cfset this.mappings["/root"]   = rootPath>
+
+</cfcomponent>

@@ -1,4 +1,14 @@
-﻿component{
+﻿<!-----------------------------------------------------------------------
+********************************************************************************
+Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
+www.coldbox.org | www.luismajano.com | www.ortussolutions.com
+********************************************************************************
+Author 	 :	Luis Majano
+Description :
+	My application's CacheBox configuration structure
+----------------------------------------------------------------------->
+<cfcomponent output="false">
+<cfscript>
 	
 	/**
 	* Configure CacheBox for ColdBox Application Operation
@@ -46,5 +56,5 @@
 			}		
 		};
 	}	
-
-}
+</cfscript>
+</cfcomponent>

@@ -10,13 +10,6 @@ component{
 	this.sessionTimeout = createTimeSpan(0,0,30,0);
 	this.setClientCookies = true;
 
-	// Java Integration
-	this.javaSettings = { 
-		loadPaths = [ ".\lib" ], 
-		loadColdFusionClassPath = true, 
-		reloadOnChange= false 
-	};
-
 	// COLDBOX STATIC PROPERTY, DO NOT CHANGE UNLESS THIS IS NOT THE ROOT OF YOUR COLDBOX APP
 	COLDBOX_APP_ROOT_PATH = getDirectoryFromPath( getCurrentTemplatePath() );
 	// The web server mapping to this application. Used for remote purposes or static purposes
@@ -26,6 +19,13 @@ component{
 	// COLDBOX APPLICATION KEY OVERRIDE
 	COLDBOX_APP_KEY 		 = "";
 
+	// Java Integration
+	this.javaSettings = { 
+		loadPaths 					= [ ".\lib" ], 
+		loadColdFusionClassPath 	= true, 
+		reloadOnChange 				= false 
+	};
+
 	// application start
 	public boolean function onApplicationStart(){
 		application.cbBootstrap = new coldbox.system.Bootstrap( COLDBOX_CONFIG_FILE, COLDBOX_APP_ROOT_PATH, COLDBOX_APP_KEY, COLDBOX_APP_MAPPING );
@@ -34,7 +34,7 @@ component{
 	}
 
 	// application end
-	public void function onApplicationEnd( struct appScope ){
+	public boolean function onApplicationEnd( struct appScope ){
 		arguments.appScope.cbBootstrap.onApplicationEnd( arguments.appScope );
 	}
 

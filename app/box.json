@@ -1,9 +1,9 @@
 {
-    "name":"My ColdBox App",
-    "version":"1.0.0",
+    "name":"Advanced APP Template",
+    "version":"1.13.0",
     "author":"You",
-    "location":"",
-    "slug":"my-coldbox-app",
+    "location":"https://github.com/coldbox-templates/advanced/archive/v1.13.0.zip",
+    "slug":"cbtemplate-advanced",
     "createPackageDirectory":false,
     "type":"mvc",
     "keywords":"",
@@ -18,16 +18,13 @@
     "contributors":[],
     "ignore":[],
     "devDependencies":{
-        "testbox":"^2.3.0"
+        "testbox":"^2.7.0"
     },
     "installPaths":{
         "coldbox":"coldbox",
-        "testbox":"testbox",
-        "ses-on-request":"modules/ses-on-request"
+        "testbox":"testbox"
     },
     "dependencies":{
-        "coldbox":"^4.3.0",
-        "ses-on-request":"^1.2.1"
-    },
-    "scripts":{}
+        "coldbox":"^5.0.0"
+    }
 }
