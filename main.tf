@@ -8,6 +8,10 @@ data "template_file" "cca-docker-compose-file" {
 
 data "template_file" "cca-nginx-file" {
   template = "${file("${path.module}/.deployment/nginx.conf.tpl")}"
+
+  vars {
+    admin_allowed_ip_address = "${var.admin_allowed_ip_address}"
+  }
 }
 
 resource "digitalocean_droplet" "application" {

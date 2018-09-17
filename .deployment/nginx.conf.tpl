@@ -20,6 +20,20 @@ http {
     listen 80;
 
     location / {
+      try_files $uri $uri/ @backend;
+    }
+
+    location /CFIDE {
+      deny all;
+    }
+
+    location /CFIDE/administrator {
+      allow ${admin_allowed_ip_address};
+      deny all;
+      try_files $uri $uri/ @backend;
+    }
+
+    location @backend {
       proxy_pass          http://app:8080;
       proxy_redirect      off;
       proxy_http_version  1.1;
@@ -29,10 +43,6 @@ http {
       proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
       proxy_set_header    X-Forwarded-Proto   $scheme;
       proxy_set_header    X-Real-IP           $remote_addr;
-    }
-
-    location /CFIDE {
-      deny all;
     }
   }
 }

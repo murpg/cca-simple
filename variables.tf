@@ -17,3 +17,8 @@ variable "droplet_size" {
   default     = "s-2vcpu-4gb"
   description = "The instance size to start"
 }
+
+variable "admin_allowed_ip_address" {
+  default     = "127.0.0.1"
+  description = "Allowed IP address for admin access. Default is localhost only"
+}
