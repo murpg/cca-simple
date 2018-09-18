@@ -1,7 +1,14 @@
-variable "do_token" {}
-variable "ssh_key_fingerprint" {}
-variable "ssh_private_key" {}
-variable "ssh_public_key" {}
+variable "do_token" {
+  description = "Your DigitalOcean Personal Access Token"
+}
+
+variable "ssh_key_fingerprint" {
+  description = "Fingerprint of your SSH public key"
+}
+
+variable "ssh_private_key" {
+  description = "Private SSH key location, so Terraform can connect to new droplets"
+}
 
 variable "droplet_image" {
   default     = "docker-16-04"
