@@ -4,6 +4,10 @@ provider "digitalocean" {
 
 data "template_file" "cca-docker-compose-file" {
   template = "${file("${path.module}/.deployment/docker-compose.yml.tpl")}"
+
+  vars {
+    admin_password = "${var.admin_password}"
+  }
 }
 
 data "template_file" "cca-nginx-file" {
