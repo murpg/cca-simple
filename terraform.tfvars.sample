@@ -4,7 +4,7 @@
 #
 # All available variables can be seen in variables.tf file and overridden here.
 
-do_token = "INSERT-YOUR-DIGITALOCEAN-TOKEN"
+do_token = "INSERT-YOUR-DIGITALOCEAN-API-TOKEN"
 
 ssh_key_fingerprint = "INSERT-YOUR-SSH-FINGERPRINT"
 
