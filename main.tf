@@ -19,7 +19,7 @@ data "template_file" "cca-nginx-file" {
 }
 
 resource "digitalocean_droplet" "application" {
-  name = "cca-application-adobe2018"
+  name = "cca-application-adobe2018-with-portainer"
 
   image              = "${var.droplet_image}"
   region             = "${var.droplet_region}"
