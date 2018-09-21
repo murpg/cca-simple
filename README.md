@@ -1,6 +1,6 @@
 # cca-simple
 
-> A simple CCA (Cloud ColdBox Application) template
+> A simple CCA (ColdBox Cloud Application) template
 
 ## Prerequisites
 
