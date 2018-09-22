@@ -33,3 +33,4 @@ app/testbox/
 Thumbs.db
 .directory
 .DS_Store
+/.vscode
