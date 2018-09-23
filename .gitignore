@@ -18,6 +18,7 @@ app/testbox/
 # IDE generated files           #
 #################################
 .idea/
+.vscode/
 *.iml
 
 #################################
@@ -33,4 +34,3 @@ app/testbox/
 Thumbs.db
 .directory
 .DS_Store
-/.vscode
