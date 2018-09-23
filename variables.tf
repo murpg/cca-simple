@@ -25,9 +25,10 @@ variable "droplet_size" {
   description = "The instance size to start."
 }
 
-variable "admin_allowed_ip_address" {
-  default     = "127.0.0.1"
-  description = "Allowed IP address for admin access. Default is localhost only."
+variable "admin_allowed_ip_list" {
+  default     = ["127.0.0.1"]
+  description = "List of allowed IPs for admin access. Default is '127.0.0.1' only."
+  type        = "list"
 }
 
 variable "admin_password" {

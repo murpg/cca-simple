@@ -28,7 +28,8 @@ http {
     }
 
     location /CFIDE/administrator {
-      allow ${admin_allowed_ip_address};
+      # allow access only from certain IP addresses
+      ${allow_ip_block}
       deny all;
       try_files $uri $uri/ @backend;
     }

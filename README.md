@@ -22,7 +22,7 @@ file and adjust variables or comment with a hash mark (#).
 
 ### Parameters
 
-- `admin_allowed_ip_address`: Allowed IP address for admin access.
+- `admin_allowed_ip_list`: List of allowed IPs for admin access.
 - `admin_password`: Plain text admin password.
 - `do_token`: **required** Your DigitalOcean Personal Access Token.
 - `droplet_image`: The Droplet image ID.
@@ -35,7 +35,7 @@ file and adjust variables or comment with a hash mark (#).
 
 | CLI option                 | Environment variable              | Default                       |
 | -------------------------- | --------------------------------- | ----------------------------- |
-| `admin_allowed_ip_address` | `TF_VAR_admin_allowed_ip_address` | `127.0.0.1`                   |
+| `admin_allowed_ip_list`    | `TF_VAR_admin_allowed_ip_list`    | `["127.0.0.1"]`               |
 | `admin_password`           | `TF_VAR_admin_password`           | `commandbox`                  |
 | **`do_token`**             | `TF_VAR_do_token`                 | -                             |
 | `droplet_image`            | `TF_VAR_droplet_image`            | `docker-16-04`                |
