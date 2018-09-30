@@ -4,25 +4,34 @@
 
 ## Prerequisites
 
-### DigitalOcean API Token
+### Digital Ocean Account
+Go to this [link](https://cloud.digitalocean.com/registrations/new) to sign up and create an account on Digital Ocean.  
+
+### Download Terraform  
+Go to this [link](https://www.terraform.io/downloads.html) and download the Terraform Binary and place it on your path. 
+
+### Digital Ocean API Token
 
 Generate a Personal Access Token via the DigitalOcean control panel. Instructions to do that can be found in this
 [link](https://www.digitalocean.com/docs/api/create-personal-access-token/). Terraform will use this token to authenticate
 to the DigitalOcean API, and control your account.
 
-### SSH Key for DigitalOcean
+### SSH Key for Digital Ocean
 
 To use SSH keys with your Droplets, you need to create an SSH key and import your SSH public key into DigitalOcean.
 Follow this [tutorial](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/) to do it.
 
+### Clone Git Project 
+`git clone git@github.com:murpg/cca-simple.git` Clone the git project and run box install inside the /cca-simple/app folder this will pull all of your dependencies. If you do not know how to run box install it means you are not using CommandBox. You can go to this [tutorial](https://commandbox.ortusbooks.com/getting-started-guide) to learn how to use CommandBox.  
+
 ## Variable Configuration
 
-Terraform allows you to override variables used for the deployment. Copy `terraform.tfvars.sample` to `terraform.tfvars`
+Terraform allows you to override variables used for  deployments. Copy `terraform.tfvars.sample` to `terraform.tfvars`
 file and adjust variables or comment with a hash mark (#).
 
 ### Parameters
 
-- `admin_allowed_ip_list`: List of allowed IPs for admin access.
+- `admin_allowed_ip_list`: An Array of a list of strings for allowed IPs that can get admin access. `["127.0.0.1", "0.0.0.0"]`
 - `admin_password`: Plain text admin password.
 - `do_token`: **required** Your DigitalOcean Personal Access Token.
 - `droplet_image`: The Droplet image ID.
