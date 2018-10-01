@@ -22,7 +22,7 @@ to the DigitalOcean API, and control your account.
 ### SSH Key for Digital Ocean
 
 To use SSH keys with your Droplets, you need to create an SSH key and import your SSH public key into DigitalOcean.
-Follow this [tutorial](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/) to do it.
+Follow this [tutorial](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/) to do it. You can run this code in Git Bash `ssh-keygen -t rsa -b 4096`  
 
 ### Clone Git Project 
 `git clone git@github.com:murpg/cca-simple.git` Clone the git project and run box install inside the /cca-simple/app folder this will pull all of your dependencies. If you do not know how to run box install it means you are not using CommandBox. You can go to this [tutorial](https://commandbox.ortusbooks.com/getting-started-guide) to learn how to use CommandBox.  
