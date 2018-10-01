@@ -7,6 +7,9 @@
 ### Digital Ocean Account
 Go to this [link](https://cloud.digitalocean.com/registrations/new) to sign up and create an account on Digital Ocean.  
 
+### Download and Install Docker
+Requires Microsoft Windows 10 Professional or Enterprise 64-bit [link](https://store.docker.com/editions/community/docker-ce-desktop-windows). For previous versions get Docker Toolbox [link](https://docs.docker.com/toolbox/overview/).
+
 ### Download Terraform  
 Go to this [link](https://www.terraform.io/downloads.html) and download the Terraform Binary and place it on your path. 
 
