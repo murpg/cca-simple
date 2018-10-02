@@ -12,4 +12,6 @@ ssh_private_key = "INSERT-PATH-TO-YOUR-PRIVATE-SSH-KEY"
 
 admin_allowed_ip_list = ["INSERT-ALLOWED-IP-ADDRESS-FOR-ADMIN-ACCESS"]
 
+application_allowed_ip_list = ["INSERT-ALLOWED-IP-ADDRESS-FOR-APPLICATION-ACCESS"]
+
 admin_password = "INSERT-ADMIN-PASSWORD"

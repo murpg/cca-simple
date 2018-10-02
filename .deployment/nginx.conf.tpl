@@ -20,6 +20,9 @@ http {
     listen 80;
 
     location / {
+      # allow access only from certain IP addresses
+      ${allow_application_ip_block}
+      deny all;
       try_files $uri $uri/ @backend;
     }
 
@@ -29,7 +32,7 @@ http {
 
     location /CFIDE/administrator {
       # allow access only from certain IP addresses
-      ${allow_ip_block}
+      ${allow_admin_ip_block}
       deny all;
       try_files $uri $uri/ @backend;
     }
