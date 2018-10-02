@@ -31,6 +31,12 @@ variable "admin_allowed_ip_list" {
   type        = "list"
 }
 
+variable "application_allowed_ip_list" {
+  default     = ["all"]
+  description = "List of allowed IPs for application access. Default is 'all'."
+  type        = "list"
+}
+
 variable "admin_password" {
   default     = "commandbox"
   description = "Plain text admin password. Default is 'commandbox'."

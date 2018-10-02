@@ -22,7 +22,8 @@ file and adjust variables or comment with a hash mark (#).
 
 ### Parameters
 
-- `admin_allowed_ip_address`: Allowed IP address for admin access.
+- `admin_allowed_ip_list`: An array of a list of strings for allowed IPs that can get admin access. `["127.0.0.1", "0.0.0.0"]`
+- `application_allowed_ip_list`: An array of a list of strings for allowed IPs that can get application access. `["2.2.2.2", "4.4.4.4"]`
 - `admin_password`: Plain text admin password.
 - `do_token`: **required** Your DigitalOcean Personal Access Token.
 - `droplet_image`: The Droplet image ID.
@@ -33,16 +34,17 @@ file and adjust variables or comment with a hash mark (#).
 
 #### Environment variables and default values
 
-| CLI option                 | Environment variable              | Default                       |
-| -------------------------- | --------------------------------- | ----------------------------- |
-| `admin_allowed_ip_address` | `TF_VAR_admin_allowed_ip_address` | `127.0.0.1`                   |
-| `admin_password`           | `TF_VAR_admin_password`           | `commandbox`                  |
-| **`do_token`**             | `TF_VAR_do_token`                 | -                             |
-| `droplet_image`            | `TF_VAR_droplet_image`            | `docker-16-04`                |
-| `droplet_region`           | `TF_VAR_droplet_region`           | `nyc3`                        |
-| `droplet_size`             | `TF_VAR_droplet_size`             | `s-2vcpu-4gb`                 |
-| **`ssh_key_fingerprint`**  | `TF_VAR_ssh_key_fingerprint`      | -                             |
-| **`ssh_private_key`**      | `TF_VAR_ssh_private_key`          | -                             |
+| CLI option                    | Environment variable                 | Default                       |
+| ----------------------------- | ------------------------------------ | ----------------------------- |
+| `admin_allowed_ip_list`       | `TF_VAR_admin_allowed_ip_list`       | `["127.0.0.1"]`               |
+| `application_allowed_ip_list` | `TF_VAR_application_allowed_ip_list` | `["all"]`                     |
+| `admin_password`              | `TF_VAR_admin_password`              | `commandbox`                  |
+| **`do_token`**                | `TF_VAR_do_token`                    | -                             |
+| `droplet_image`               | `TF_VAR_droplet_image`               | `docker-16-04`                |
+| `droplet_region`              | `TF_VAR_droplet_region`              | `nyc3`                        |
+| `droplet_size`                | `TF_VAR_droplet_size`                | `s-2vcpu-4gb`                 |
+| **`ssh_key_fingerprint`**     | `TF_VAR_ssh_key_fingerprint`         | -                             |
+| **`ssh_private_key`**         | `TF_VAR_ssh_private_key`             | -                             |
 
 ## Managing the Deployment Lifecycle
 
