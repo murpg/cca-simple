@@ -14,7 +14,7 @@ data "template_file" "cca-nginx-file" {
   template = "${file("${path.module}/.deployment/nginx.conf.tpl")}"
 
   vars {
-    admin_allowed_ip_address = "${var.admin_allowed_ip_address}"
+    allow_ip_block = "${join("\n", formatlist("allow %s;", var.admin_allowed_ip_list))}"
   }
 }
 

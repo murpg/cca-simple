@@ -10,6 +10,6 @@ ssh_key_fingerprint = "INSERT-YOUR-SSH-FINGERPRINT"
 
 ssh_private_key = "INSERT-PATH-TO-YOUR-PRIVATE-SSH-KEY"
 
-admin_allowed_ip_address = "INSERT-ALLOWED-IP-ADDRESS-FOR-ADMIN-ACCESS"
+admin_allowed_ip_list = ["INSERT-ALLOWED-IP-ADDRESS-FOR-ADMIN-ACCESS"]
 
 admin_password = "INSERT-ADMIN-PASSWORD"
