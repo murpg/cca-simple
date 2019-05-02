@@ -11,7 +11,7 @@ variable "ssh_private_key" {
 }
 
 variable "droplet_image" {
-  default     = "docker-16-04"
+  default     = "docker-18-04"
   description = "The Droplet image ID."
 }
 
